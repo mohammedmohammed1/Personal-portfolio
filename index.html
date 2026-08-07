@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohammed Yasin | Data Analyst & BI Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Mohammed Yasin - Data Analyst with 1+ year experience specializing in Power BI, Advanced SQL, ETL Pipelines, Machine Learning, and Data Analytics. Recipient of VTAB Square Rising Star 2025 Award.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- html2pdf Library for PDF Generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <!-- Stylesheet (With Cache-Busting Parameters) -->
+  <link rel="stylesheet" href="styles.css?v=3.0.0&t=1786110100">
+
+  <!-- Instant PDF Download Helper -->
+  <script>
+    window.downloadResumePDF = function(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      var toast = document.getElementById('toast-notification');
+      if (toast) {
+        toast.innerHTML = '<i class="fas fa-check-circle"></i> Downloading Mohamed_Yasin_Resume.pdf...';
+        toast.classList.add('show');
+        setTimeout(function() { toast.classList.remove('show'); }, 3500);
+      }
+      
+      // Direct File Download Trigger
+      var a = document.createElement('a');
+      a.href = 'assets/Mohamed_Yasin_Resume.pdf';
+      a.download = 'Mohamed_Yasin_Resume.pdf';
+      a.target = '_blank';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      
+      // html2pdf Backup Export
+      var template = document.getElementById('pdf-resume-template');
+      if (template && typeof html2pdf !== 'undefined') {
+        var opt = {
+          margin: [0.2, 0.2, 0.2, 0.2],
+          filename: 'Mohamed_Yasin_Resume.pdf',
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2, useCORS: true, logging: false },
+          jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(template).save().catch(function(err){ console.error(err); });
+      }
+    };
+  </script>
+</head>
+<body>
+
+  <!-- Custom Cursor Micro-Interaction -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-outline"></div>
+
+  <!-- Branded Splash Screen -->
+  <div id="splash-screen">
+    <div class="splash-logo">
+      <div class="quantum-logo-icon">
+        <div class="quantum-orbit-small"></div>
+        <div class="quantum-core-small"><i class="fas fa-atom"></i></div>
+      </div>
+      <span>Mohammed <span class="quantum-gradient-text">Yasin</span></span>
+    </div>
+    <div class="splash-progress-bar">
+      <div class="splash-progress-fill"></div>
+    </div>
+    <div class="splash-sub">INITIALIZING QUANTUM BI & DATA PIPELINE...</div>
+  </div>
+
+  <!-- Background Animated Canvas -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="ambient-blur-1"></div>
+  <div class="ambient-blur-2"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo quantum-brand-nav">
+        <div class="brand-monogram-emblem" id="header-avatar-container" title="Click camera icon to update profile logo">
+          <img src="assets/profile_avatar.jpg" alt="Mohammed Yasin Logo" class="brand-logo-img" id="header-avatar-img">
+          <div class="monogram-ring"></div>
+          <div class="avatar-edit-overlay" id="btn-edit-header-avatar" title="Update Profile Logo">
+            <i class="fas fa-camera"></i>
+          </div>
+        </div>
+        <div class="brand-name-group">
+          <span class="quantum-brand-name">Mohammed <span class="quantum-gradient-text">Yasin</span></span>
+          <span class="brand-tag-sub"><i class="fas fa-chart-network"></i> BI &amp; DATA ANALYST</span>
+        </div>
+      </a>
+      
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="#about" class="active">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#playground">Playground</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Dark/Light Theme Switcher -->
+        <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Light/Dark Theme">
+          <i class="fas fa-sun"></i>
+        </button>
+
+        <div class="status-badge">
+          <div class="pulse-dot"></div>
+          <span>Open for BI / Analyst Roles</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="hero" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="award-banner">
+          <i class="fas fa-trophy"></i> VTAB Square Rising Star of the Year 2025 Award Winner
+        </div>
+
+        <div class="section-tag">
+          <i class="fas fa-sparkles"></i> Data Analyst &amp; BI Developer | 1+ Year Experience
+        </div>
+        
+        <div class="hero-brand-header">
+          <div class="hero-title-wrapper">
+            <h1 class="quantum-hero-title">
+              <span class="quantum-first-name">Mohammed</span>
+              <span class="quantum-last-name">Yasin</span>
+            </h1>
+            <div class="quantum-sub-badge">
+              <i class="fas fa-atom"></i> QUANTUM DATA &amp; BI PIPELINE
+            </div>
+          </div>
+        </div>
+        
+        <div class="typewriter-wrapper">
+          <span class="typewriter-prefix">&gt;</span>
+          <span id="typewriter-target" class="typewriter-text"></span>
+        </div>
+
+        <p class="hero-description">
+          Data Analyst with 1+ year of experience delivering end-to-end analytics solutions — from data extraction and pipeline design to executive-ready dashboards — across elderly care, digital analytics, and education domains. B.Tech in AI &amp; Data Science (CGPA: 8.37).
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">
+            <i class="fas fa-laptop-code"></i> View 25+ Projects
+          </a>
+          <button id="btn-download-resume" class="btn-secondary" onclick="downloadResumePDF(event)">
+            <i class="fas fa-file-download"></i> Download Resume (PDF)
+          </button>
+        </div>
+
+        <div class="social-pills">
+          <a href="mailto:mohamedyasin9168@gmail.com" class="social-pill email">
+            <i class="fas fa-envelope"></i> mohamedyasin9168@gmail.com
+          </a>
+          <a href="tel:+919688809186" class="social-pill phone">
+            <i class="fas fa-phone"></i> +91 968 880 9186
+          </a>
+          <a href="https://www.linkedin.com/in/mohammed-yasin-12a2392a6/" target="_blank" class="social-pill linkedin">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://github.com/mohammedmohammed1" target="_blank" class="social-pill github">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-glass-card">
+          <div class="glass-card-header">
+            <div class="window-controls">
+              <div class="window-dots">
+                <div class="window-dot dot-red"></div>
+                <div class="window-dot dot-yellow"></div>
+                <div class="window-dot dot-green"></div>
+              </div>
+              <div class="terminal-badge"><i class="fas fa-microchip"></i> BI TELEMETRY v2.5</div>
+            </div>
+            <div class="live-status-pill">
+              <span class="pulse-dot-green"></span> ONLINE
+            </div>
+          </div>
+
+          <div class="metrics-counter-grid">
+            <div class="metric-box blue">
+              <div class="metric-header">
+                <i class="fas fa-chart-line"></i>
+                <span class="metric-number">1+ Yr</span>
+              </div>
+              <div class="metric-label">Analytics Experience</div>
+              <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 100%;"></div></div>
+            </div>
+            <div class="metric-box purple">
+              <div class="metric-header">
+                <i class="fas fa-cubes"></i>
+                <span class="metric-number">25+</span>
+              </div>
+              <div class="metric-label">Enterprise BI &amp; ML Projects</div>
+              <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 95%;"></div></div>
+            </div>
+            <div class="metric-box cyan">
+              <div class="metric-header">
+                <i class="fas fa-graduation-cap"></i>
+                <span class="metric-number">8.37</span>
+              </div>
+              <div class="metric-label">B.Tech AI &amp; DS CGPA</div>
+              <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 84%;"></div></div>
+            </div>
+            <div class="metric-box gold">
+              <div class="metric-header">
+                <i class="fas fa-trophy"></i>
+                <span class="metric-number">Award</span>
+              </div>
+              <div class="metric-label">Rising Star of 2025</div>
+              <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 100%;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Me Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">About Mohamed Yasin</div>
+        <h2>Translating Complex Data into Decision-Ready Insights</h2>
+        <p>A results-driven data professional recognized for milestone project delivery, pipeline accuracy, and stakeholder communication.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-nav-tabs">
+            <button class="tab-btn active" data-tab="tab-overview">Overview</button>
+            <button class="tab-btn" data-tab="tab-pillars">Core Competencies</button>
+            <button class="tab-btn" data-tab="tab-award">Award & Recognition</button>
+          </div>
+
+          <div id="tab-overview" class="tab-content active">
+            <div class="about-text">
+              <p>👋 Hello! I'm <b>Mohamed Yasin</b>, a Data Analyst & BI Developer with 1+ year of experience building end-to-end reporting solutions for executive stakeholders.</p>
+              <p>I specialize in architecting data extraction workflows across SQL Server Management Studio (SSMS), PostgreSQL, and Google Cloud Platform (GCP), developing complex Power BI dashboards, and building machine learning models in Python.</p>
+            </div>
+            <ul class="about-bullets">
+              <li><i class="fas fa-check-circle"></i> <b>Dashboard Design:</b> Power BI, Looker Studio, Excel KPI Dashboards & RLS</li>
+              <li><i class="fas fa-check-circle"></i> <b>ETL & Databases:</b> SSMS, PostgreSQL, MySQL, GCP, Source-to-Target Data Quality</li>
+              <li><i class="fas fa-check-circle"></i> <b>Data Science & ML:</b> Python, Pandas, NumPy, Scikit-learn, TensorFlow</li>
+            </ul>
+          </div>
+
+          <div id="tab-pillars" class="tab-content">
+            <div class="about-text">
+              <p>Core competencies across data lifecycle engineering:</p>
+            </div>
+            <ul class="about-bullets">
+              <li><i class="fas fa-layer-group"></i> Data Extraction & ETL Pipeline Engineering</li>
+              <li><i class="fas fa-calculator"></i> Advanced DAX & SQL Query Performance Tuning</li>
+              <li><i class="fas fa-shield-alt"></i> Data Quality, Governance & Stakeholder Communication</li>
+            </ul>
+          </div>
+
+          <div id="tab-award" class="tab-content">
+            <div class="about-text">
+              <p>🏆 <b>VTAB Square's Rising Star of the Year 2025:</b></p>
+              <p>Awarded in recognition of successfully delivering a milestone analytics project with outstanding performance, taking four concurrent reporting lines live under tight timelines.</p>
+            </div>
+            <ul class="about-bullets">
+              <li><i class="fas fa-award" style="color: var(--accent-gold);"></i> Recognized for milestone delivery excellence</li>
+              <li><i class="fas fa-chart-line"></i> Owned Elderly Care, Google Analytics, Educational & LLM reporting</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="chart-box">
+          <div class="chart-title">
+            <h3>Technical Skill Distribution</h3>
+            <p>Expertise across Analytics, SQL, ETL & Data Science</p>
+          </div>
+          <div class="donut-canvas-container">
+            <canvas id="donut-canvas" width="260" height="260"></canvas>
+          </div>
+          <div class="donut-legend">
+            <div class="legend-item"><div class="legend-dot" style="background-color: #f2c811;"></div> Power BI (35%)</div>
+            <div class="legend-item"><div class="legend-dot" style="background-color: #4479a1;"></div> SQL (30%)</div>
+            <div class="legend-item"><div class="legend-dot" style="background-color: #bb9af7;"></div> ETL (20%)</div>
+            <div class="legend-item"><div class="legend-dot" style="background-color: #3776ab;"></div> Python & ML (15%)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career Experience & Education Section -->
+  <section id="experience" class="timeline-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Career & Education Journey</div>
+        <h2>Professional Experience & Academic Credentials</h2>
+        <p>Proven work experience at VTAB Square & Grad Twin, paired with strong academic performance in AI & Data Science.</p>
+      </div>
+
+      <div class="timeline-grid">
+        <!-- Experience Column -->
+        <div class="timeline-column">
+          <h3><i class="fas fa-briefcase" style="color: var(--accent-blue);"></i> Work Experience</h3>
+          <div class="timeline">
+            <!-- Role 1 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <h4 class="timeline-role">Data Analyst</h4>
+                <div class="timeline-company">VTAB Square Pvt Ltd · Chennai</div>
+                <div class="timeline-date">Aug 2025 – Present</div>
+                <ul class="timeline-list">
+                  <li>Own end-to-end delivery of analytics solutions across four concurrent reporting lines — <i>Elderly Care</i>, <i>Google Analytics</i>, <i>Educational</i>, and <i>LLM Model Reporting</i>.</li>
+                  <li>Architect data extraction and transformation workflows across SQL Server Management Studio (SSMS), PostgreSQL, and Google Cloud Platform (GCP).</li>
+                  <li>Design and maintain interactive Power BI and Excel dashboards that surface key KPIs and operational trends.</li>
+                  <li>Partner directly with business stakeholders to translate ambiguous reporting requests into structured, scalable dashboard solutions.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Role 2 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <h4 class="timeline-role">Junior Data Scientist Intern</h4>
+                <div class="timeline-company">Grad Twin Service Pvt Ltd · Chennai</div>
+                <div class="timeline-date">May 2025 – Aug 2025</div>
+                <ul class="timeline-list">
+                  <li>Built repeatable data preparation workflows in Python (Pandas, NumPy) — retrieving, cleaning, and validating structured datasets ahead of modeling.</li>
+                  <li>Developed and evaluated supervised learning models (classification and regression) using Scikit-learn to support predictive analytics initiatives.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Column -->
+        <div class="timeline-column">
+          <h3><i class="fas fa-graduation-cap" style="color: var(--accent-purple);"></i> Education & Academics</h3>
+          <div class="timeline">
+            <!-- Edu 1 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <h4 class="timeline-role">B.Tech — Artificial Intelligence and Data Science</h4>
+                <div class="timeline-company">Dhaanish Ahmed College of Engineering, Chennai</div>
+                <div class="timeline-date">Jan 2021 – May 2025</div>
+                <div style="margin-top: 0.5rem;">
+                  <span class="cert-badge" style="background: rgba(122, 162, 247, 0.15); color: var(--accent-blue); border-color: rgba(122, 162, 247, 0.3);">
+                    <i class="fas fa-star"></i> CGPA: 8.37 / 10
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Edu 2 -->
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-card">
+                <h4 class="timeline-role">Higher Secondary Certificate (HSC)</h4>
+                <div class="timeline-company">St. Thomas Higher Secondary School, Thanjavur</div>
+                <div class="timeline-date">Jun 2018 – Apr 2019</div>
+                <div style="margin-top: 0.5rem;">
+                  <span class="cert-badge" style="background: rgba(158, 206, 106, 0.15); color: var(--accent-green); border-color: rgba(158, 206, 106, 0.3);">
+                    <i class="fas fa-check-circle"></i> Passed with 86.14%
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verified Certifications & Management Section -->
+  <section id="certifications" class="certifications-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Verified Industry Credentials</div>
+        <h2>Certifications & PDF Management</h2>
+        <p>Upload, view, update, and manage official certificates from Accenture, British Airways, IBM, Infosys, and MongoDB.</p>
+      </div>
+
+      <div class="cert-management-bar">
+        <div class="search-filter-wrapper cert-search">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="cert-search-input" class="search-input-box" placeholder="Search certificates by title or issuer (e.g. Accenture, IBM, Infosys, Forage)...">
+        </div>
+
+        <button id="btn-open-upload-cert" class="btn-primary btn-add-cert">
+          <i class="fas fa-plus-circle"></i> Upload New Certificate PDF
+        </button>
+      </div>
+
+      <div id="certificates-container" class="certs-grid">
+        <!-- Certificate cards rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Expanded 25+ Projects Section with Search Bar -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Industry & Personal Projects</div>
+        <h2>Enterprise Analytics & Data Science Projects</h2>
+        <p>Explore 25+ real-world company reporting solutions, AI/ML models, and executive BI dashboards.</p>
+      </div>
+
+      <!-- Project Management Bar -->
+      <div class="project-management-bar" style="display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+        <div class="search-filter-wrapper" style="flex: 1; margin-bottom: 0;">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="project-search-input" class="search-input-box" placeholder="Search projects by name, tool (e.g. Power BI, SQL, ML, Python)...">
+        </div>
+
+        <button id="btn-open-upload-project" class="btn-primary btn-add-cert">
+          <i class="fas fa-plus-circle"></i> Add New Project
+        </button>
+      </div>
+
+      <div class="skill-filters">
+        <button class="filter-btn project-filter-btn active" data-filter="all">All Projects (25+)</button>
+        <button class="filter-btn project-filter-btn" data-filter="fin">Banking &amp; Finance</button>
+        <button class="filter-btn project-filter-btn" data-filter="ai">AI &amp; Machine Learning</button>
+        <button class="filter-btn project-filter-btn" data-filter="ent">Enterprise &amp; Marketing</button>
+        <button class="filter-btn project-filter-btn" data-filter="ops">Healthcare &amp; Education</button>
+      </div>
+
+      <div id="projects-container" class="projects-grid">
+        <!-- Project 1: Elderly Care -->
+        <div class="project-card" data-category="ops">
+          <div class="project-img-wrapper">
+            <img src="assets/healthcare_analytics.jpg" alt="Grand World Elderly Care Dashboard">
+            <div class="project-tag-overlay">Healthcare & Services</div>
+          </div>
+          <div class="project-body">
+            <h3>Grand World Elderly Care Dashboard</h3>
+            <div class="project-subtitle">Operational & Service Analytics (Power BI)</div>
+            <p class="project-desc">Built an interactive Power BI dashboard consolidating real-time sales and operational data for elderly care services, surfacing total revenue and monthly growth to guide decisions.</p>
+            <div class="project-impact-box">
+              <i class="fas fa-chart-line"></i>
+              <span>Impact: Primary reporting reference for VTAB Square stakeholders.</span>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Power BI</span>
+              <span class="tech-badge">Power Query</span>
+              <span class="tech-badge">Excel</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="project-btn-details" data-project="elderly"><i class="fas fa-eye"></i> View Insights</button>
+              <a href="https://github.com/mohammedmohammed1" target="_blank" class="project-btn-github"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Proven Banking -->
+        <div class="project-card" data-category="fin">
+          <div class="project-img-wrapper">
+            <img src="assets/loan_analytics.jpg" alt="Proven Banking Dashboard">
+            <div class="project-tag-overlay">Banking & Finance</div>
+          </div>
+          <div class="project-body">
+            <h3>Proven Banking Dashboard</h3>
+            <div class="project-subtitle">Disbursement & Risk Insights (Power BI)</div>
+            <p class="project-desc">Built an interactive Power BI dashboard analyzing loan disbursement, banking performance, and customer insights with dynamic filters that improved business decision-making.</p>
+            <div class="project-impact-box">
+              <i class="fas fa-university"></i>
+              <span>Impact: Streamlined loan performance tracking & customer analysis.</span>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Power BI</span>
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">DAX</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="project-btn-details" data-project="banking"><i class="fas fa-eye"></i> View Insights</button>
+              <a href="https://github.com/mohammedmohammed1" target="_blank" class="project-btn-github"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: DDoS Detection -->
+        <div class="project-card" data-category="ai">
+          <div class="project-img-wrapper">
+            <img src="assets/sales_revenue.jpg" alt="Deep Learning DDoS Detection">
+            <div class="project-tag-overlay">AI & Network Security</div>
+          </div>
+          <div class="project-body">
+            <h3>Deep Learning DDoS Detection for SDN</h3>
+            <div class="project-subtitle">Real-Time Network Security (LSTM)</div>
+            <p class="project-desc">Engineered a real-time DDoS anomaly detection system using LSTM deep learning models with Python, TensorFlow, Ryu Controller, and Mininet, achieving 98.2% accuracy.</p>
+            <div class="project-impact-box">
+              <i class="fas fa-shield-alt"></i>
+              <span>Impact: High detection accuracy while significantly reducing false positives.</span>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">TensorFlow</span>
+              <span class="tech-badge">Ryu</span>
+              <span class="tech-badge">Mininet</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="project-btn-details" data-project="ddos"><i class="fas fa-eye"></i> View Insights</button>
+              <a href="https://github.com/mohammedmohammed1" target="_blank" class="project-btn-github"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Rainfall Prediction -->
+        <div class="project-card" data-category="ai">
+          <div class="project-img-wrapper">
+            <img src="assets/hr_attrition.jpg" alt="Rainfall Prediction Model">
+            <div class="project-tag-overlay">AI & Predictive Analytics</div>
+          </div>
+          <div class="project-body">
+            <h3>Rainfall Prediction Model</h3>
+            <div class="project-subtitle">Exploratory Data Analysis & Machine Learning</div>
+            <p class="project-desc">Applied exploratory data analysis and supervised ML models (Linear Regression, K-Nearest Neighbors) to uncover rainfall patterns and build predictive models.</p>
+            <div class="project-impact-box">
+              <i class="fas fa-cloud-sun-rain"></i>
+              <span>Impact: Accurate predictive modeling for weather pattern analysis.</span>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Scikit-learn</span>
+              <span class="tech-badge">Pandas</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="project-btn-details" data-project="rainfall"><i class="fas fa-eye"></i> View Insights</button>
+              <a href="https://github.com/mohammedmohammed1" target="_blank" class="project-btn-github"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5: Chobani Dashboard -->
+        <div class="project-card" data-category="ent">
+          <div class="project-img-wrapper">
+            <img src="assets/sales_revenue.jpg" alt="Chobani Analytics Dashboard">
+            <div class="project-tag-overlay">Enterprise & Retail</div>
+          </div>
+          <div class="project-body">
+            <h3>Chobani Supply & Sales Analytics</h3>
+            <div class="project-subtitle">Retail Performance & Demand Forecasting</div>
+            <p class="project-desc">Designed an enterprise analytics dashboard tracking retail product velocity, regional distribution metrics, and supply chain fulfillment rates.</p>
+            <div class="project-impact-box">
+              <i class="fas fa-box-open"></i>
+              <span>Impact: Real-time visibility into retail stock fulfillment.</span>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Power BI</span>
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">Excel</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="project-btn-details"><i class="fas fa-eye"></i> View Insights</button>
+              <a href="https://github.com/mohammedmohammed1" target="_blank" class="project-btn-github"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6: AI Resume Parser -->
+        <div class="project-card" data-category="ai">
+          <div class="project-img-wrapper">
+            <img src="assets/hr_attrition.jpg" alt="AI Resume Parser Analysis">
+            <div class="project-tag-overlay">AI & NLP Analytics</div>
+          </div>
+          <div class="project-body">
+            <h3>AI Resume Parser Analysis</h3>
+            <div class="project-subtitle">Automated Candidate Skill Extraction</div>
+            <p class="project-desc">Built an automated NLP data preparation workflow parsing resume PDFs to extract technical competencies, experience timelines, and candidate match scores.</p>
+            <div class="project-impact-box">
+              <i class="fas fa-user-check"></i>
+              <span>Impact: Accelerated recruitment screening workflow by 70%.</span>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">NLP</span>
+              <span class="tech-badge">Pandas</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="project-btn-details"><i class="fas fa-eye"></i> View Insights</button>
+              <a href="https://github.com/mohammedmohammed1" target="_blank" class="project-btn-github"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7: ML Personality Prediction -->
+        <div class="project-card" data-category="ai">
+          <div class="project-img-wrapper">
+            <img src="assets/loan_analytics.jpg" alt="ML Personality Prediction">
+            <div class="project-tag-overlay">AI & Behavioral Science</div>
+          </div>
+          <div class="project-body">
+            <h3>ML Based Personality Prediction</h3>
+            <div class="project-subtitle">Supervised Behavioral Classification</div>
+            <p class="project-desc">Trained supervised classification models (Decision Trees, Random Forest) analyzing candidate response datasets to predict personality traits.</p>
+            <div class="project-impact-box">
+              <i class="fas fa-brain"></i>
+              <span>Impact: High classification metrics on behavioral profiles.</span>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Scikit-learn</span>
+              <span class="tech-badge">ML</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="project-btn-details"><i class="fas fa-eye"></i> View Insights</button>
+              <a href="https://github.com/mohammedmohammed1" target="_blank" class="project-btn-github"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8: WPP Google Analytics -->
+        <div class="project-card" data-category="ent">
+          <div class="project-img-wrapper">
+            <img src="assets/sales_revenue.jpg" alt="WPP Google Analytics">
+            <div class="project-tag-overlay">Digital Marketing & Web Analytics</div>
+          </div>
+          <div class="project-body">
+            <h3>WPP Google Analytics & Digital Dashboard</h3>
+            <div class="project-subtitle">Web Telemetry & Campaign Analytics</div>
+            <p class="project-desc">Architected digital analytics dashboards parsing website traffic, user acquisition funnels, conversion rates, and campaign ROI metrics.</p>
+            <div class="project-impact-box">
+              <i class="fas fa-chart-line"></i>
+              <span>Impact: Primary web telemetry reporting line at VTAB Square.</span>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Google Analytics</span>
+              <span class="tech-badge">Looker Studio</span>
+              <span class="tech-badge">Power BI</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="project-btn-details"><i class="fas fa-eye"></i> View Insights</button>
+              <a href="https://github.com/mohammedmohammed1" target="_blank" class="project-btn-github"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 9: LLM Model Reporting -->
+        <div class="project-card" data-category="ai">
+          <div class="project-img-wrapper">
+            <img src="assets/healthcare_analytics.jpg" alt="LLM Model Analytical Reporting">
+            <div class="project-tag-overlay">AI & Generative Reporting</div>
+          </div>
+          <div class="project-body">
+            <h3>LLM Model Analytical Reporting</h3>
+            <div class="project-subtitle">AI Model Performance & Latency Telemetry</div>
+            <p class="project-desc">Designed an analytical reporting dashboard tracking LLM inference latency, token usage costs, accuracy evaluation scores, and user prompt throughput.</p>
+            <div class="project-impact-box">
+              <i class="fas fa-robot"></i>
+              <span>Impact: Executive visibility into AI LLM deployment telemetry.</span>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Power BI</span>
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">GCP</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="project-btn-details"><i class="fas fa-eye"></i> View Insights</button>
+              <a href="https://github.com/mohammedmohammed1" target="_blank" class="project-btn-github"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 10: IDEA Public School -->
+        <div class="project-card" data-category="ops">
+          <div class="project-img-wrapper">
+            <img src="assets/hr_attrition.jpg" alt="IDEA Public School Analytics">
+            <div class="project-tag-overlay">Educational Analytics</div>
+          </div>
+          <div class="project-body">
+            <h3>IDEA Public School Academic Report</h3>
+            <div class="project-subtitle">Student Performance & Attendance Tracking</div>
+            <p class="project-desc">Engineered an educational reporting dashboard tracking student attendance trends, test score distributions, and department performance metrics.</p>
+            <div class="project-impact-box">
+              <i class="fas fa-graduation-cap"></i>
+              <span>Impact: Provided school administration with actionable student insights.</span>
+            </div>
+            <div class="project-tech-stack">
+              <span class="tech-badge">Power BI</span>
+              <span class="tech-badge">SQL Server</span>
+              <span class="tech-badge">Excel</span>
+            </div>
+            <div class="project-card-actions">
+              <button class="project-btn-details"><i class="fas fa-eye"></i> View Insights</button>
+              <a href="https://github.com/mohammedmohammed1" target="_blank" class="project-btn-github"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive BI Code Playground -->
+  <section id="playground" class="playground-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Interactive Feature</div>
+        <h2>SQL & DAX Code Playground</h2>
+        <p>Select production code written by Mohamed Yasin and simulate live execution to evaluate output results.</p>
+      </div>
+
+      <div class="playground-container">
+        <div class="playground-header">
+          <div class="playground-tabs">
+            <button class="pg-tab active" data-pg="dax">
+              <i class="fas fa-calculator" style="color: #f2c811;"></i> Power BI (DAX)
+            </button>
+            <button class="pg-tab" data-pg="sql_etl">
+              <i class="fas fa-database" style="color: #cc292b;"></i> T-SQL SSMS Stored Procedure
+            </button>
+            <button class="pg-tab" data-pg="mysql">
+              <i class="fas fa-table" style="color: #4479a1;"></i> MySQL Window Function
+            </button>
+            <button class="pg-tab" data-pg="python">
+              <i class="fab fa-python" style="color: #3776ab;"></i> Python ML Pipeline
+            </button>
+          </div>
+
+          <div class="results-summary-badge" id="result-summary">
+            <i class="fas fa-check-circle"></i> Evaluated successfully
+          </div>
+        </div>
+
+        <div class="playground-body">
+          <div class="editor-pane">
+            <div class="pane-title-bar">
+              <span>Code Editor</span>
+              <span id="pg-lang-badge">DAX</span>
+            </div>
+            <textarea id="playground-code" class="code-area" readonly></textarea>
+            <div class="editor-actions">
+              <button class="btn-run" id="btn-run-code">
+                <i class="fas fa-play"></i> Re-Evaluate Snippet
+              </button>
+            </div>
+          </div>
+
+          <div class="results-pane">
+            <div class="pane-title-bar">
+              <span>Live Execution Result</span>
+              <span>Status: 200 OK</span>
+            </div>
+            <div class="result-table-container">
+              <table class="data-table">
+                <thead id="result-thead"></thead>
+                <tbody id="result-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating AI Assistant Widget -->
+  <button id="ai-chat-btn" class="ai-chat-btn" title="Ask YasinAI Assistant">
+    <i class="fas fa-robot"></i>
+    <div class="ai-badge-pulse"></div>
+  </button>
+
+  <div id="ai-chat-drawer" class="ai-chat-drawer">
+    <div class="ai-chat-header">
+      <div class="ai-chat-header-info">
+        <div class="ai-avatar"><i class="fas fa-robot"></i></div>
+        <div>
+          <h4>YasinAI Assistant</h4>
+          <p><i class="fas fa-circle" style="font-size: 0.6rem;"></i> Active & Ready</p>
+        </div>
+      </div>
+      <button id="ai-chat-close" class="ai-chat-close"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div id="ai-chat-messages" class="ai-chat-messages">
+      <div class="ai-msg bot">
+        👋 Hi! I am <b>YasinAI</b>. Ask me anything about Mohamed Yasin's 2025 Rising Star Award, B.Tech AI & DS degree, 25+ projects, or experience!
+      </div>
+    </div>
+
+    <div class="ai-quick-pills">
+      <div class="ai-pill">VTAB Rising Star 2025 Award</div>
+      <div class="ai-pill">Education & CGPA</div>
+      <div class="ai-pill">What are Yasin's top skills?</div>
+      <div class="ai-pill">Grand World Elderly Care Project</div>
+      <div class="ai-pill">Contact Info</div>
+    </div>
+
+    <div class="ai-chat-input-row">
+      <input type="text" id="ai-chat-input" placeholder="Ask a question about Mohamed Yasin...">
+      <button id="ai-chat-send"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- Contact & Reach Out Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-box quantum-contact-box">
+        <div class="contact-glow-backdrop"></div>
+        <div class="section-tag" style="margin-bottom: 1.25rem; display: inline-flex;"><i class="fas fa-paper-plane"></i> Get In Touch</div>
+        <h2 class="quantum-contact-title">Let's Build Something Exceptional</h2>
+        <p class="contact-lead-text">I am actively seeking Data Analyst &amp; BI Developer roles. Feel free to reach out directly via email, phone, or LinkedIn!</p>
+
+        <div class="email-copy-bar quantum-email-bar">
+          <div class="email-icon-pulse"><i class="fas fa-envelope"></i></div>
+          <span class="email-text">mohamedyasin9168@gmail.com</span>
+          <button class="btn-copy" id="btn-copy-email"><i class="far fa-copy"></i> Copy Email</button>
+        </div>
+
+        <div class="contact-social-row">
+          <a href="tel:+919688809186" class="social-pill phone contact-pill">
+            <i class="fas fa-phone-alt"></i> +91 968 880 9186
+          </a>
+          <a href="https://www.linkedin.com/in/mohammed-yasin-12a2392a6/" target="_blank" class="social-pill linkedin contact-pill">
+            <i class="fab fa-linkedin-in"></i> Connect on LinkedIn
+          </a>
+          <a href="https://github.com/mohammedmohammed1" target="_blank" class="social-pill github contact-pill">
+            <i class="fab fa-github"></i> GitHub Repositories
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Mohammed Yasin • Data Analyst & BI Developer Portfolio</p>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close"><i class="fas fa-times"></i></button>
+      <h2 id="modal-title" style="margin-bottom: 0.25rem;">Project Title</h2>
+      <div id="modal-sub" style="color: var(--accent-blue); font-weight: 600; margin-bottom: 1.25rem;">Subtitle</div>
+      <p id="modal-desc" style="color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.7;"></p>
+      
+      <h4 style="color: var(--text-bright); margin-bottom: 0.75rem;">Technical Architecture & Highlights</h4>
+      <ul id="modal-arch" class="about-bullets" style="margin-bottom: 1.5rem;"></ul>
+
+      <h4 style="color: var(--text-bright); margin-bottom: 0.75rem;">Key Technologies</h4>
+      <div id="modal-tech" class="project-tech-stack" style="margin-bottom: 1.5rem;"></div>
+
+      <h4 style="color: var(--text-bright); margin-bottom: 0.75rem;">Business Impact</h4>
+      <div id="modal-impact" class="project-impact-box"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast-notification">
+    <i class="fas fa-check-circle"></i> Email address copied to clipboard!
+  </div>
+
+  <!-- Hidden Printable PDF Resume Template (Used by html2pdf.js) -->
+  <div id="pdf-resume-template" class="pdf-container-hidden">
+    <div class="pdf-header">
+      <div class="pdf-header-left">
+        <img src="assets/profile_avatar.jpg" alt="Mohammed Yasin Profile Avatar" class="pdf-avatar">
+        <div>
+          <h1 class="pdf-name">MOHAMED YASIN</h1>
+          <p class="pdf-title">DATA ANALYST | 1+ Year of Experience</p>
+        </div>
+      </div>
+      <div class="pdf-contact-grid">
+        <div><b>Email:</b> mohamedyasin9168@gmail.com</div>
+        <div><b>Phone:</b> +91 968 880 9186</div>
+        <div><b>LinkedIn:</b> linkedin.com/in/mohammed-yasin-12a2392a6</div>
+        <div><b>GitHub:</b> github.com/mohammedmohammed1</div>
+      </div>
+    </div>
+
+    <div class="pdf-award-box">
+      <i class="fas fa-trophy"></i> <b>VTAB Square Rising Star of the Year 2025 Award Recipient</b> — Recognized for outstanding delivery on a milestone project and demonstrating exceptional performance.
+    </div>
+
+    <div class="pdf-section-title">Professional Summary</div>
+    <p class="pdf-summary">
+      Data Analyst with 1+ year of experience delivering end-to-end analytics solutions — from data extraction and pipeline design to executive-ready dashboards — across elderly care, digital analytics, and education domains. Proficient in SQL, Python, and Power BI, with a track record of translating complex datasets into clear, decision-ready insights for cross-functional stakeholders.
+    </p>
+
+    <div class="pdf-section-title">Core Competencies</div>
+    <div class="pdf-skills-grid" style="grid-template-columns: repeat(2, 1fr); margin-bottom: 10px;">
+      <div>• Data Analysis & Reporting</div>
+      <div>• ETL & Data Pipelines</div>
+      <div>• Dashboard Design (Power BI/Excel)</div>
+      <div>• SQL Query Optimization</div>
+      <div>• Stakeholder Communication</div>
+      <div>• Machine Learning</div>
+      <div>• Data Quality & Governance</div>
+      <div>• Cloud Data Platforms (GCP)</div>
+    </div>
+
+    <div class="pdf-section-title">Professional Experience</div>
+    <div class="pdf-experience-item">
+      <div class="pdf-role-header">
+        <span><span class="pdf-company">Data Analyst</span> | VTAB Square Pvt Ltd</span>
+        <span class="pdf-dates">Aug 2025 – Present</span>
+      </div>
+      <ul class="pdf-bullets">
+        <li>Own end-to-end delivery of analytics solutions across four concurrent reporting lines — Elderly Care, Google Analytics, Educational, and LLM Model Reporting — enabling stakeholders to make faster, data-driven decisions.</li>
+        <li>Architect data extraction and transformation workflows across SQL Server Management Studio, PostgreSQL, and Google Cloud Platform, improving data accuracy and streamlining recurring reporting cycles.</li>
+        <li>Design and maintain interactive Power BI and Excel dashboards that surface key KPIs and trends, becoming the primary reporting reference for stakeholders and cross-functional teams.</li>
+        <li>Partner directly with business stakeholders to translate ambiguous reporting requests into structured, scalable dashboard solutions.</li>
+      </ul>
+    </div>
+
+    <div class="pdf-experience-item">
+      <div class="pdf-role-header">
+        <span><span class="pdf-company">Junior Data Scientist Intern</span> | Grad Twin Service Pvt Ltd</span>
+        <span class="pdf-dates">May 2025 – Aug 2025</span>
+      </div>
+      <ul class="pdf-bullets">
+        <li>Built a repeatable data preparation workflow in Python (Pandas, NumPy) — retrieving, cleaning, and validating structured datasets ahead of modelling.</li>
+        <li>Developed and evaluated supervised learning models (classification and regression) using Scikit-learn to support predictive analytics initiatives.</li>
+      </ul>
+    </div>
+
+    <div class="pdf-section-title">Key Projects</div>
+    <div class="pdf-projects-grid">
+      <div class="pdf-project-card">
+        <img src="assets/sales_revenue.jpg" alt="Grand World Elderly Care" class="pdf-project-img">
+        <div class="pdf-project-title">Grand World Elderly Care Dashboard (Power BI)</div>
+        <div class="pdf-project-desc">Built an interactive Power BI dashboard consolidating real-time sales and operational data for elderly care services, surfacing KPIs such as total revenue and monthly growth (Sep 2025 – Nov 2025).</div>
+      </div>
+      <div class="pdf-project-card">
+        <img src="assets/loan_analytics.jpg" alt="Proven Banking Dashboard" class="pdf-project-img">
+        <div class="pdf-project-title">Proven Banking Dashboard (Power BI)</div>
+        <div class="pdf-project-desc">Built an interactive Power BI dashboard analysing loan disbursement, banking performance, and customer insights with KPIs, charts, and filters (Dec 2025 – Jan 2025).</div>
+      </div>
+      <div class="pdf-project-card">
+        <img src="assets/healthcare_analytics.jpg" alt="Deep Learning DDoS Detection" class="pdf-project-img">
+        <div class="pdf-project-title">DDoS Anomaly Detection System for SDN</div>
+        <div class="pdf-project-desc">Engineered a real-time DDoS anomaly detection system using LSTM models with Python, TensorFlow, Ryu Controller, and Mininet (Jan 2025 – May 2025).</div>
+      </div>
+      <div class="pdf-project-card">
+        <img src="assets/hr_attrition.jpg" alt="Rainfall Prediction Model" class="pdf-project-img">
+        <div class="pdf-project-title">Rainfall Prediction Model</div>
+        <div class="pdf-project-desc">Applied exploratory data analysis and machine learning (Linear Regression, KNN) to uncover regional rainfall patterns (Jul 2023 – Sep 2023).</div>
+      </div>
+    </div>
+
+    <div class="pdf-section-title">Technical Skills</div>
+    <div class="pdf-skills-grid">
+      <div><span class="pdf-skill-category">Programming & ML:</span> <span class="pdf-skill-list">Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Machine Learning, Data Science</span></div>
+      <div><span class="pdf-skill-category">Databases & BI:</span> <span class="pdf-skill-list">SQL Server Management Studio, PostgreSQL, MySQL, Power BI, Looker Studio, Excel, GCP</span></div>
+      <div><span class="pdf-skill-category">Tools & AI:</span> <span class="pdf-skill-list">Git/GitHub, Artificial Intelligence, Power Query, DAX</span></div>
+    </div>
+
+    <div class="pdf-section-title">Education & Certifications</div>
+    <div class="pdf-role-header" style="margin-bottom: 4px;">
+      <span><b>Bachelor of Technology — Artificial Intelligence and Data Science</b></span>
+      <span class="pdf-dates">Jan 2021 – May 2025</span>
+    </div>
+    <div style="font-size: 10px; color: #475569; margin-bottom: 8px;">Dhaanish Ahmed College of Engineering | CGPA: 8.37</div>
+
+    <div class="pdf-role-header" style="margin-bottom: 4px;">
+      <span><b>Higher Secondary Certificate (HSC)</b></span>
+      <span class="pdf-dates">Jun 2018 – Apr 2019</span>
+    </div>
+    <div style="font-size: 10px; color: #475569; margin-bottom: 10px;">St. Thomas Higher Secondary School, Thanjavur | Passed with 86.14%</div>
+
+    <div style="font-size: 10px; color: #334155; line-height: 1.5;">
+      <b>Certifications:</b> Data Analysis & Visualization (Accenture, Aug 2024) • Introduction to Data Science (Infosys, Aug 2024) • Python for Beginners (Udemy, Sep 2024) • Power BI for Job Simulation (Forage, Dec 2024)
+    </div>
+  </div>
+
+  <!-- Upload / Edit Certificate Modal -->
+  <div class="modal-overlay" id="cert-upload-modal">
+    <div class="modal-card cert-modal-card">
+      <button class="modal-close" id="cert-upload-modal-close"><i class="fas fa-times"></i></button>
+      <h2 id="cert-modal-title" style="margin-bottom: 0.5rem;"><i class="fas fa-certificate" style="color: var(--accent-cyan);"></i> Upload Certificate</h2>
+      <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem;">Add a new PDF certificate or update existing credentials in your portfolio.</p>
+
+      <form id="cert-form">
+        <input type="hidden" id="cert-edit-id" value="">
+        
+        <div class="form-group">
+          <label for="cert-title-input">Certificate Title *</label>
+          <input type="text" id="cert-title-input" class="form-input" placeholder="e.g. Data Analytics and Visualization Job Simulation" required>
+        </div>
+
+        <div class="form-group-grid">
+          <div class="form-group">
+            <label for="cert-issuer-input">Issuing Organization *</label>
+            <input type="text" id="cert-issuer-input" class="form-input" placeholder="e.g. Accenture / Forage, IBM, Infosys" required>
+          </div>
+          <div class="form-group">
+            <label for="cert-date-input">Issue Date *</label>
+            <input type="text" id="cert-date-input" class="form-input" placeholder="e.g. August 8, 2024" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cert-code-input">Verification Code / Credential ID (Optional)</label>
+          <input type="text" id="cert-code-input" class="form-input" placeholder="e.g. Verification Code: DpbCGPAkP28QSmLc5">
+        </div>
+
+        <div class="form-group">
+          <label>Certificate File (PDF or Image) *</label>
+          <div class="file-dropzone" id="cert-dropzone">
+            <i class="fas fa-cloud-upload-alt dropzone-icon"></i>
+            <p>Click or drag &amp; drop certificate PDF / image here</p>
+            <span id="cert-file-name" class="file-name-tag">No file selected</span>
+            <input type="file" id="cert-file-input" accept=".pdf,image/*" style="display: none;">
+          </div>
+        </div>
+
+        <div id="cert-progress-wrapper" class="progress-bar-wrapper" style="display: none;">
+          <div class="progress-bar-label"><span>Uploading Certificate...</span><span id="cert-progress-num">0%</span></div>
+          <div class="progress-track"><div id="cert-progress-bar" class="progress-fill"></div></div>
+        </div>
+
+        <div class="modal-form-actions">
+          <button type="button" id="btn-cancel-cert" class="btn-secondary">Cancel</button>
+          <button type="submit" id="btn-save-cert" class="btn-primary"><i class="fas fa-save"></i> Save Certificate</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Interactive Built-in PDF / Certificate Viewer Modal -->
+  <div class="modal-overlay" id="cert-viewer-modal">
+    <div class="modal-card cert-viewer-card">
+      <div class="viewer-header">
+        <div>
+          <h3 id="viewer-cert-title">Certificate Document</h3>
+          <p id="viewer-cert-sub" style="font-size: 0.8rem; color: var(--accent-cyan);"></p>
+        </div>
+        <div class="viewer-actions">
+          <a id="viewer-download-btn" href="#" download class="btn-secondary btn-sm"><i class="fas fa-download"></i> Download</a>
+          <a id="viewer-tab-btn" href="#" target="_blank" class="btn-secondary btn-sm"><i class="fas fa-external-link-alt"></i> Open Tab</a>
+          <button class="modal-close" id="cert-viewer-modal-close"><i class="fas fa-times"></i></button>
+        </div>
+      </div>
+      <div class="viewer-body" id="cert-viewer-body">
+        <!-- PDF / Image element embedded dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Upload / Edit Project Modal -->
+  <div class="modal-overlay" id="project-upload-modal">
+    <div class="modal-card cert-modal-card" style="max-width: 640px;">
+      <button class="modal-close" id="project-upload-modal-close"><i class="fas fa-times"></i></button>
+      <h2 id="project-modal-title" style="margin-bottom: 0.5rem;"><i class="fas fa-folder-plus" style="color: var(--accent-cyan);"></i> Add / Edit Project</h2>
+      <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem;">Add a new project or update details, tech badges, images, and documents.</p>
+
+      <form id="project-form">
+        <input type="hidden" id="project-edit-id" value="">
+        
+        <div class="form-group">
+          <label for="proj-title-input">Project Title *</label>
+          <input type="text" id="proj-title-input" class="form-input" placeholder="e.g. Grand World Elderly Care Dashboard" required>
+        </div>
+
+        <div class="form-group-grid">
+          <div class="form-group">
+            <label for="proj-category-input">Category *</label>
+            <select id="proj-category-input" class="form-input" required>
+              <option value="fin">Banking &amp; Finance</option>
+              <option value="ai">AI &amp; Machine Learning</option>
+              <option value="ent">Enterprise &amp; Marketing</option>
+              <option value="ops" selected>Healthcare &amp; Education</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="proj-subtitle-input">Subtitle / Domain *</label>
+            <input type="text" id="proj-subtitle-input" class="form-input" placeholder="e.g. Operational &amp; Service Analytics (Power BI)" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="proj-desc-input">Description *</label>
+          <textarea id="proj-desc-input" class="form-input" rows="3" placeholder="Brief overview of project goals, features, and outcome..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="proj-impact-input">Business Impact *</label>
+          <input type="text" id="proj-impact-input" class="form-input" placeholder="e.g. Primary reporting reference for VTAB Square stakeholders." required>
+        </div>
+
+        <div class="form-group">
+          <label for="proj-tech-input">Tech Badges (Comma-separated) *</label>
+          <input type="text" id="proj-tech-input" class="form-input" placeholder="e.g. Power BI, Power Query, Excel, DAX" required>
+        </div>
+
+        <div class="form-group-grid">
+          <div class="form-group">
+            <label>Project Cover Image (Optional)</label>
+            <div class="file-dropzone" id="proj-img-dropzone" style="padding: 1rem;">
+              <i class="fas fa-image dropzone-icon" style="font-size: 1.5rem;"></i>
+              <p style="font-size: 0.8rem;">Click to upload cover image</p>
+              <span id="proj-img-name" class="file-name-tag">Default image used</span>
+              <input type="file" id="proj-img-input" accept="image/*" style="display: none;">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Project Document / PDF (Optional)</label>
+            <div class="file-dropzone" id="proj-doc-dropzone" style="padding: 1rem;">
+              <i class="fas fa-file-pdf dropzone-icon" style="font-size: 1.5rem;"></i>
+              <p style="font-size: 0.8rem;">Click to upload document</p>
+              <span id="proj-doc-name" class="file-name-tag">No file attached</span>
+              <input type="file" id="proj-doc-input" accept=".pdf,.doc,.docx" style="display: none;">
+            </div>
+          </div>
+        </div>
+
+        <div id="proj-progress-wrapper" class="progress-bar-wrapper" style="display: none;">
+          <div class="progress-bar-label"><span>Saving Project Data...</span><span id="proj-progress-num">0%</span></div>
+          <div class="progress-track"><div id="proj-progress-bar" class="progress-fill"></div></div>
+        </div>
+
+        <div class="modal-form-actions">
+          <button type="button" id="btn-cancel-project" class="btn-secondary">Cancel</button>
+          <button type="submit" id="btn-save-project" class="btn-primary"><i class="fas fa-save"></i> Save Project</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Profile Image Upload & Crop Modal -->
+  <div class="modal-overlay" id="profile-image-modal">
+    <div class="modal-card cert-modal-card" style="max-width: 520px; text-align: center;">
+      <button class="modal-close" id="profile-image-modal-close"><i class="fas fa-times"></i></button>
+      <h2 style="margin-bottom: 0.5rem;"><i class="fas fa-user-circle" style="color: var(--accent-cyan);"></i> Update Profile Logo</h2>
+      <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 1.5rem;">Select a JPG, PNG, or WebP image from your computer to update your brand logo emblem instantly.</p>
+
+      <div class="avatar-preview-container" style="position: relative; width: 160px; height: 160px; margin: 0 auto 1.5rem auto; border-radius: 50%; padding: 6px; background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan)); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <img id="avatar-crop-preview" src="assets/profile_avatar.jpg" alt="Avatar Preview" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; background: #000;">
+      </div>
+
+      <div class="file-dropzone" id="avatar-dropzone" style="padding: 1.25rem; margin-bottom: 1.25rem;">
+        <i class="fas fa-cloud-upload-alt dropzone-icon" style="font-size: 1.8rem;"></i>
+        <p style="font-size: 0.85rem; margin-top: 0.4rem;">Click or drag to select new profile image</p>
+        <span id="avatar-file-name" class="file-name-tag">JPG, PNG, WebP supported</span>
+        <input type="file" id="avatar-file-input" accept="image/jpeg,image/png,image/webp" style="display: none;">
+      </div>
+
+      <div class="form-group" style="text-align: left;">
+        <label for="avatar-fit-select">Image Display Fit Mode</label>
+        <select id="avatar-fit-select" class="form-input">
+          <option value="cover" selected>Fill / Crop Center (Cover)</option>
+          <option value="contain">Fit Entire Image (Contain)</option>
+        </select>
+      </div>
+
+      <div class="modal-form-actions" style="justify-content: center;">
+        <button type="button" id="btn-cancel-avatar" class="btn-secondary">Cancel</button>
+        <button type="button" id="btn-save-avatar" class="btn-primary"><i class="fas fa-check"></i> Save &amp; Apply Logo</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js?v=3.0.0&t=1786110100"></script>
+</body>
+</html>
