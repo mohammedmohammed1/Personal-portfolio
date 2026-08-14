@@ -920,10 +920,8 @@ function initCertificates() {
           ${c.code ? `<div class="cert-badge"><i class="fas fa-check-circle"></i> ${c.code}</div>` : ''}
         </div>
         <div class="cert-actions-row">
-          <button class="btn-cert-act view" data-id="${c.id}"><i class="fas fa-eye"></i> View</button>
+          <button class="btn-cert-act view" data-id="${c.id}"><i class="fas fa-eye"></i> View Certificate</button>
           <button class="btn-cert-act download" data-id="${c.id}"><i class="fas fa-download"></i> Download</button>
-          <button class="btn-cert-act edit admin-only-control" data-id="${c.id}"><i class="fas fa-edit"></i> Edit</button>
-          <button class="btn-cert-act delete admin-only-control" data-id="${c.id}"><i class="fas fa-trash-alt"></i></button>
         </div>
       </div>
     `).join('');
@@ -1531,8 +1529,10 @@ function initProjectManagement() {
     container.innerHTML = filtered.map(p => `
       <div class="project-card" data-category="${p.category}" data-id="${p.id}">
         <div class="project-img-wrapper">
-          <img src="${p.imgUrl || 'assets/healthcare_analytics.jpg'}" alt="${p.title}">
+          <img src="${p.imgUrl || 'assets/healthcare_analytics.jpg'}" alt="${p.title}" class="project-static-img">
+          <canvas class="project-hover-canvas" data-category="${p.category}" data-id="${p.id}"></canvas>
           <div class="project-tag-overlay">${p.categoryName || 'Analytics & Data Science'}</div>
+          <div class="project-hover-badge"><i class="fas fa-play"></i> HOVER TO ANIMATE</div>
         </div>
         <div class="project-body">
           <h3>${p.title}</h3>
@@ -1550,15 +1550,11 @@ function initProjectManagement() {
             ${p.docUrl ? `<a href="${p.docUrl}" download class="project-btn-github" title="Download Document"><i class="fas fa-file-pdf"></i></a>` : ''}
             <a href="${p.githubUrl || 'https://github.com/mohammedmohammed1'}" target="_blank" class="project-btn-github" title="GitHub Repository"><i class="fab fa-github"></i></a>
           </div>
-          <div class="project-card-mgmt-actions admin-only-control">
-            <button class="btn-cert-act edit btn-proj-edit" data-id="${p.id}"><i class="fas fa-edit"></i> Edit</button>
-            <button class="btn-cert-act delete btn-proj-delete" data-id="${p.id}"><i class="fas fa-trash-alt"></i> Delete</button>
-          </div>
         </div>
       </div>
     `).join('');
 
-    // Attach Event Listeners
+    // Attach Event Listeners for View Insights
     container.querySelectorAll('.btn-proj-view').forEach(btn => {
       btn.addEventListener('click', () => {
         const id = btn.getAttribute('data-id');
@@ -1567,13 +1563,8 @@ function initProjectManagement() {
       });
     });
 
-    container.querySelectorAll('.btn-proj-edit').forEach(btn => {
-      btn.addEventListener('click', () => openEditProjectModal(btn.getAttribute('data-id')));
-    });
-
-    container.querySelectorAll('.btn-proj-delete').forEach(btn => {
-      btn.addEventListener('click', () => deleteProject(btn.getAttribute('data-id')));
-    });
+    // Initialize Hover AI Motion Canvas Animation Engine
+    initProjectHoverAnimations();
   }
 
   function openProjectModal(data) {
@@ -1937,6 +1928,133 @@ function initAdminMode() {
 
   checkAdminState();
 }
+
+/* ==========================================================================
+   19. AI MOTION HOVER ANIMATION ENGINE FOR PROJECTS
+   ========================================================================== */
+function initProjectHoverAnimations() {
+  const container = document.getElementById('projects-container');
+  if (!container) return;
+
+  container.querySelectorAll('.project-card').forEach(card => {
+    const canvas = card.querySelector('.project-hover-canvas');
+    const badge = card.querySelector('.project-hover-badge');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    const cat = canvas.getAttribute('data-category') || 'fin';
+
+    let animId = null;
+    let step = 0;
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width * (window.devicePixelRatio || 1);
+      canvas.height = rect.height * (window.devicePixelRatio || 1);
+      ctx.scale(window.devicePixelRatio || 1, window.devicePixelRatio || 1);
+    }
+
+    function drawFrame() {
+      const w = canvas.clientWidth || 360;
+      const h = canvas.clientHeight || 210;
+      ctx.clearRect(0, 0, w, h);
+
+      // Dark futuristic gradient background
+      const bgGrad = ctx.createLinearGradient(0, 0, w, h);
+      bgGrad.addColorStop(0, '#090d16');
+      bgGrad.addColorStop(1, '#0f172a');
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, w, h);
+
+      step += 0.04;
+
+      if (cat === 'fin') {
+        // Banking & Finance: Animated Rising Line Wave & Glowing Candlesticks
+        ctx.strokeStyle = '#38bdf8';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        for (let x = 0; x <= w; x += 8) {
+          const y = h / 2 + Math.sin(x * 0.02 + step) * 25 + Math.cos(x * 0.01 - step) * 15;
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+        // Glowing Bars
+        const numBars = 8;
+        for (let i = 0; i < numBars; i++) {
+          const barX = 25 + i * (w / numBars);
+          const barH = 30 + Math.abs(Math.sin(step + i * 0.6)) * (h * 0.45);
+          ctx.fillStyle = i % 2 === 0 ? 'rgba(56, 189, 248, 0.45)' : 'rgba(158, 206, 106, 0.45)';
+          ctx.fillRect(barX, h - barH - 20, (w / 14), barH);
+        }
+      } else if (cat === 'ai') {
+        // AI & Machine Learning: Animated Neural Network Nodes & Matrix Packets
+        const nodes = 8;
+        for (let i = 0; i < nodes; i++) {
+          const nx = 35 + ((w - 70) / (nodes - 1)) * i;
+          const ny = h / 2 + Math.sin(step * 1.5 + i) * 35;
+          ctx.fillStyle = '#bb9af7';
+          ctx.beginPath();
+          ctx.arc(nx, ny, 6, 0, Math.PI * 2);
+          ctx.fill();
+
+          if (i > 0) {
+            const prevX = 35 + ((w - 70) / (nodes - 1)) * (i - 1);
+            const prevY = h / 2 + Math.sin(step * 1.5 + i - 1) * 35;
+            ctx.strokeStyle = 'rgba(187, 154, 247, 0.6)';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(prevX, prevY);
+            ctx.lineTo(nx, ny);
+            ctx.stroke();
+          }
+        }
+      } else if (cat === 'ent') {
+        // Enterprise Marketing & Sales Funnel Analytics
+        for (let i = 0; i < 5; i++) {
+          const y = 30 + i * 35;
+          const len = (w * 0.35) + Math.sin(step + i) * (w * 0.35);
+          ctx.fillStyle = i % 2 === 0 ? 'rgba(122, 162, 247, 0.55)' : 'rgba(187, 154, 247, 0.55)';
+          ctx.fillRect(25, y, len, 18);
+        }
+      } else {
+        // Healthcare & Operations ECG Pulse Wave
+        ctx.strokeStyle = '#9ece6a';
+        ctx.lineWidth = 3.5;
+        ctx.beginPath();
+        for (let x = 0; x <= w; x += 4) {
+          let y = h / 2;
+          const phase = (x + step * 50) % 160;
+          if (phase > 40 && phase < 70) {
+            y = h / 2 - Math.sin((phase - 40) / 30 * Math.PI) * 45;
+          }
+          if (x === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+
+      animId = requestAnimationFrame(drawFrame);
+    }
+
+    card.addEventListener('mouseenter', () => {
+      resizeCanvas();
+      if (badge) badge.innerHTML = `<i class="fas fa-video"></i> AI MOTION LOOP`;
+      if (!animId) drawFrame();
+    });
+
+    card.addEventListener('mouseleave', () => {
+      if (badge) badge.innerHTML = `<i class="fas fa-play"></i> HOVER TO ANIMATE`;
+      if (animId) {
+        cancelAnimationFrame(animId);
+        animId = null;
+      }
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    });
+  });
+}
+
 
 
 

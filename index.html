@@ -88,12 +88,9 @@
   <nav class="navbar">
     <div class="container nav-container">
       <a href="#hero" class="brand-logo quantum-brand-nav">
-        <div class="brand-monogram-emblem" id="header-avatar-container" title="Profile Logo Emblem">
+        <div class="brand-monogram-emblem" id="header-avatar-container" title="Mohammed Yasin">
           <img src="assets/profile_avatar.jpg" alt="Mohammed Yasin Logo" class="brand-logo-img" id="header-avatar-img">
           <div class="monogram-ring"></div>
-          <div class="avatar-edit-overlay admin-only-control" id="btn-edit-header-avatar" title="Update Profile Logo">
-            <i class="fas fa-camera"></i>
-          </div>
         </div>
         <div class="brand-name-group">
           <span class="quantum-brand-name">Mohammed <span class="quantum-gradient-text">Yasin</span></span>
@@ -114,11 +111,6 @@
         <!-- Dark/Light Theme Switcher -->
         <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Light/Dark Theme">
           <i class="fas fa-sun"></i>
-        </button>
-
-        <!-- Admin Access Control Button -->
-        <button id="admin-lock-btn" class="theme-toggle-btn admin-lock-btn" title="Admin Access Control (Unlock Uploads/Edits)">
-          <i class="fas fa-lock" id="admin-lock-icon"></i>
         </button>
 
         <div class="status-badge" id="public-status-badge">
@@ -408,14 +400,10 @@
       </div>
 
       <div class="cert-management-bar">
-        <div class="search-filter-wrapper cert-search">
+        <div class="search-filter-wrapper cert-search" style="flex: 1;">
           <i class="fas fa-search search-icon"></i>
           <input type="text" id="cert-search-input" class="search-input-box" placeholder="Search certificates by title or issuer (e.g. Accenture, IBM, Infosys, Forage)...">
         </div>
-
-        <button id="btn-open-upload-cert" class="btn-primary btn-add-cert admin-only-control">
-          <i class="fas fa-plus-circle"></i> Upload New Certificate PDF
-        </button>
       </div>
 
       <div id="certificates-container" class="certs-grid">
@@ -433,16 +421,12 @@
         <p>Explore 25+ real-world company reporting solutions, AI/ML models, and executive BI dashboards.</p>
       </div>
 
-      <!-- Project Management Bar -->
-      <div class="project-management-bar" style="display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-        <div class="search-filter-wrapper" style="flex: 1; margin-bottom: 0;">
+      <!-- Project Search Bar -->
+      <div class="project-management-bar" style="margin-bottom: 1.5rem;">
+        <div class="search-filter-wrapper" style="width: 100%; margin-bottom: 0;">
           <i class="fas fa-search search-icon"></i>
           <input type="text" id="project-search-input" class="search-input-box" placeholder="Search projects by name, tool (e.g. Power BI, SQL, ML, Python)...">
         </div>
-
-        <button id="btn-open-upload-project" class="btn-primary btn-add-cert admin-only-control">
-          <i class="fas fa-plus-circle"></i> Add New Project
-        </button>
       </div>
 
       <div class="skill-filters">
