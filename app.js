@@ -1924,6 +1924,18 @@ function initAdminMode() {
   checkAdminState();
 }
 
+window.downloadResumePDF = function(e) {
+  if (e) e.preventDefault();
+  const pdfUrl = 'assets/Mohamed_Yasin_Resume.pdf';
+  const a = document.createElement('a');
+  a.href = pdfUrl;
+  a.download = 'Mohamed_Yasin_Resume.pdf';
+  a.target = '_blank';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => document.body.removeChild(a), 300);
+};
+
 /* ==========================================================================
    19. AI MOTION HOVER ANIMATION ENGINE FOR PROJECTS
    ========================================================================== */

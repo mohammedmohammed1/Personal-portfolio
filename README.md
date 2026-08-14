@@ -132,29 +132,37 @@ Interactive reports using Power BI, SQL, and DAX.
 
 ---
 
+---
+
 # 🌐 Connect With Me
 
 <p align="center">
 
 <a href="https://www.linkedin.com/in/mohammed-yasin-12a2392a6/">
-
 <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
-
 </a>
 
 <a href="https://github.com/mohammedmohammed1">
-
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
-
 </a>
 
-<a href="mailto:YOUR_EMAIL@gmail.com">
-
+<a href="mailto:mohamedyasin9168@gmail.com">
 <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
 
+<a href="https://github.com/mohammedmohammed1/Personal-portfolio/raw/main/assets/Mohamed_Yasin_Resume.pdf">
+<img src="https://img.shields.io/badge/Download%20Resume-PDF-2563EB?style=for-the-badge&logo=adobeacrobatreader&logoColor=white"/>
 </a>
 
 </p>
+
+---
+
+# 📄 Resume & Credentials
+
+- 📄 **PDF Resume**: [Download Mohamed Yasin Resume (PDF)](https://github.com/mohammedmohammed1/Personal-portfolio/raw/main/assets/Mohamed_Yasin_Resume.pdf)
+- 🎓 **B.Tech**: Artificial Intelligence & Data Science (CGPA: 8.37)
+- 🏆 **Award**: VTAB Square Rising Star of the Year 2025
 
 ---
 
