@@ -1162,7 +1162,7 @@ function initProjectManagement() {
       tech: ["Power BI", "Power Query", "Excel", "DAX"],
       imgUrl: "assets/healthcare_analytics.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-2",
@@ -1175,7 +1175,7 @@ function initProjectManagement() {
       tech: ["Power BI", "SQL", "DAX", "Financial Analytics"],
       imgUrl: "assets/loan_analytics.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-3",
@@ -1188,7 +1188,7 @@ function initProjectManagement() {
       tech: ["Python", "TensorFlow", "LSTM", "SDN", "Mininet"],
       imgUrl: "assets/sales_revenue.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-4",
@@ -1201,7 +1201,7 @@ function initProjectManagement() {
       tech: ["Python", "Scikit-learn", "Pandas", "EDA"],
       imgUrl: "assets/hr_attrition.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-5",
@@ -1214,7 +1214,7 @@ function initProjectManagement() {
       tech: ["Power BI", "SQL", "Excel", "Supply Chain"],
       imgUrl: "assets/sales_revenue.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-6",
@@ -1227,7 +1227,7 @@ function initProjectManagement() {
       tech: ["Python", "NLP", "Pandas", "Regex"],
       imgUrl: "assets/hr_attrition.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-7",
@@ -1240,7 +1240,7 @@ function initProjectManagement() {
       tech: ["Python", "Scikit-learn", "Machine Learning"],
       imgUrl: "assets/loan_analytics.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-8",
@@ -1253,7 +1253,7 @@ function initProjectManagement() {
       tech: ["Google Analytics", "Looker Studio", "Power BI"],
       imgUrl: "assets/sales_revenue.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-9",
@@ -1266,7 +1266,7 @@ function initProjectManagement() {
       tech: ["Power BI", "Python", "GCP", "LLM Evaluation"],
       imgUrl: "assets/healthcare_analytics.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-10",
@@ -1279,7 +1279,7 @@ function initProjectManagement() {
       tech: ["Power BI", "SQL Server", "Excel"],
       imgUrl: "assets/hr_attrition.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-11",
@@ -1292,7 +1292,7 @@ function initProjectManagement() {
       tech: ["Power BI", "DAX", "SQL", "Excel"],
       imgUrl: "assets/sales_revenue.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1/BlinkIT-Business-Analytics-Dashboard"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio/BlinkIT-Business-Analytics-Dashboard"
     },
     {
       id: "proj-12",
@@ -1305,7 +1305,7 @@ function initProjectManagement() {
       tech: ["Python", "BeautifulSoup", "Scikit-learn", "Pandas"],
       imgUrl: "assets/loan_analytics.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-13",
@@ -1318,7 +1318,7 @@ function initProjectManagement() {
       tech: ["Power BI", "Excel", "Data Cleaning", "Data Modeling"],
       imgUrl: "assets/healthcare_analytics.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-14",
@@ -1331,7 +1331,7 @@ function initProjectManagement() {
       tech: ["IBM Cloud", "Power BI", "Cost Analytics"],
       imgUrl: "assets/sales_revenue.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-15",
@@ -1344,7 +1344,7 @@ function initProjectManagement() {
       tech: ["Python", "NumPy", "Pandas", "Matplotlib", "Seaborn"],
       imgUrl: "assets/hr_attrition.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-16",
@@ -1357,7 +1357,7 @@ function initProjectManagement() {
       tech: ["MongoDB", "Node.js", "Express", "NoSQL"],
       imgUrl: "assets/loan_analytics.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-17",
@@ -1370,7 +1370,7 @@ function initProjectManagement() {
       tech: ["Python", "K-Means", "RFM", "Power BI"],
       imgUrl: "assets/sales_revenue.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-18",
@@ -1383,7 +1383,7 @@ function initProjectManagement() {
       tech: ["Python", "XGBoost", "Scikit-learn", "Healthcare BI"],
       imgUrl: "assets/healthcare_analytics.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-19",
@@ -1396,7 +1396,7 @@ function initProjectManagement() {
       tech: ["Python", "Random Forest", "SQL", "Power BI"],
       imgUrl: "assets/loan_analytics.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-20",
@@ -1409,7 +1409,7 @@ function initProjectManagement() {
       tech: ["Power BI", "SQL", "Excel", "DAX"],
       imgUrl: "assets/sales_revenue.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-21",
@@ -1422,7 +1422,7 @@ function initProjectManagement() {
       tech: ["Python", "SMOTE", "Scikit-learn", "SQL"],
       imgUrl: "assets/loan_analytics.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-22",
@@ -1435,7 +1435,7 @@ function initProjectManagement() {
       tech: ["Power BI", "Power Query", "DAX", "Excel"],
       imgUrl: "assets/hr_attrition.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-23",
@@ -1448,7 +1448,7 @@ function initProjectManagement() {
       tech: ["Google Analytics", "Power BI", "Python", "SQL"],
       imgUrl: "assets/sales_revenue.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-24",
@@ -1461,7 +1461,7 @@ function initProjectManagement() {
       tech: ["Python", "Prophet", "ARIMA", "Pandas"],
       imgUrl: "assets/healthcare_analytics.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     },
     {
       id: "proj-25",
@@ -1474,13 +1474,13 @@ function initProjectManagement() {
       tech: ["Python", "NumPy", "Pandas", "Matplotlib", "Financial Analytics"],
       imgUrl: "assets/loan_analytics.jpg",
       docUrl: "",
-      githubUrl: "https://github.com/mohammedmohammed1"
+      githubUrl: "https://github.com/mohammedmohammed1/Personal-portfolio"
     }
   ];
 
   function getProjects() {
     const saved = localStorage.getItem('yasin_portfolio_projects');
-    if (!saved || JSON.parse(saved).length < 25) {
+    if (!saved || JSON.parse(saved).length < 25 || (saved && !saved.includes('/Personal-portfolio'))) {
       localStorage.setItem('yasin_portfolio_projects', JSON.stringify(defaultProjects));
       return defaultProjects;
     }
@@ -1546,7 +1546,7 @@ function initProjectManagement() {
           <div class="project-card-actions">
             <button class="project-btn-details btn-proj-view" data-id="${p.id}"><i class="fas fa-eye"></i> View Insights</button>
             ${p.docUrl ? `<a href="${p.docUrl}" download class="project-btn-github" title="Download Document"><i class="fas fa-file-pdf"></i></a>` : ''}
-            <a href="${p.githubUrl || 'https://github.com/mohammedmohammed1'}" target="_blank" class="project-btn-github" title="GitHub Repository"><i class="fab fa-github"></i></a>
+            <a href="${p.githubUrl || 'https://github.com/mohammedmohammed1/Personal-portfolio'}" target="_blank" class="project-btn-github" title="GitHub Repository"><i class="fab fa-github"></i></a>
           </div>
         </div>
       </div>
@@ -1704,7 +1704,7 @@ function initProjectManagement() {
                 id: 'proj-' + Date.now(),
                 title, category, categoryName: categoryNames[category] || 'Analytics',
                 subtitle, desc, impact, tech, imgUrl, docUrl,
-                githubUrl: 'https://github.com/mohammedmohammed1'
+                githubUrl: 'https://github.com/mohammedmohammed1/Personal-portfolio'
               };
               list.unshift(newProj);
               showToast("New project added successfully!");

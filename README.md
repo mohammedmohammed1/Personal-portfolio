@@ -20,8 +20,8 @@ Data Analyst • Business Intelligence Developer • ETL Developer
 
 # 📄 Official Resume Download
 
-- 📥 **Primary Resume Link**: [Download Mohamed Yasin Resume (PDF)](https://github.com/mohammedmohammed1/Personal-portfolio/raw/main/assets/Mohamed_Yasin_Resume.pdf)
-- 📥 **Alternative Resume Link**: [Download Mohammd Yasin CV (PDF)](https://github.com/mohammedmohammed1/Personal-portfolio/raw/main/assets/Mohammd_Yasin_CV.pdf)
+- 📥 **Primary Resume Link**: [Download Mohamed Yasin Resume (PDF)](https://github.com/mohammedmohammed1/Personal-portfolio/__REPO_TMP__/raw/main/assets/Mohamed_Yasin_Resume.pdf)
+- 📥 **Alternative Resume Link**: [Download Mohammd Yasin CV (PDF)](https://github.com/mohammedmohammed1/Personal-portfolio/__REPO_TMP__/raw/main/assets/Mohammd_Yasin_CV.pdf)
 
 ---
 
@@ -90,13 +90,13 @@ Data Analyst • Business Intelligence Developer • ETL Developer
 <a href="https://www.linkedin.com/in/mohammed-yasin-12a2392a6/">
 <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
 </a>
-<a href="https://github.com/mohammedmohammed1">
+<a href="https://github.com/mohammedmohammed1/Personal-portfolio">
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
 <a href="mailto:mohamedyasin9168@gmail.com">
 <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
 </a>
-<a href="https://github.com/mohammedmohammed1/Personal-portfolio/raw/main/assets/Mohamed_Yasin_Resume.pdf">
+<a href="https://github.com/mohammedmohammed1/Personal-portfolio/__REPO_TMP__/raw/main/assets/Mohamed_Yasin_Resume.pdf">
 <img src="https://img.shields.io/badge/Download%20Resume-PDF-2563EB?style=for-the-badge&logo=adobeacrobatreader&logoColor=white"/>
 </a>
 </p>
