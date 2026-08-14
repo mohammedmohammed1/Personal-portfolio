@@ -2546,6 +2546,47 @@ footer {
   opacity: 1;
 }
 
+/* Public Visitor vs. Admin Access Mode Control */
+body:not(.admin-mode-active) .admin-only-control {
+  display: none !important;
+}
+
+body.admin-mode-active .admin-only-control {
+  display: inline-flex !important;
+}
+
+div.avatar-edit-overlay.admin-only-control {
+  display: flex !important;
+}
+
+body:not(.admin-mode-active) div.avatar-edit-overlay.admin-only-control {
+  display: none !important;
+}
+
+.admin-lock-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  color: var(--text-main);
+  transition: var(--transition-normal);
+}
+
+.admin-lock-btn:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+body.admin-mode-active .admin-lock-btn {
+  background: rgba(158, 206, 106, 0.15);
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+}
+
+.admin-badge {
+  background: rgba(158, 206, 106, 0.15);
+  border: 1px solid var(--accent-green);
+  color: var(--accent-green);
+}
+
 @media (max-width: 768px) {
   .quantum-contact-box {
     padding: 2.5rem 1.5rem;
@@ -2554,6 +2595,7 @@ footer {
     font-size: 2rem;
   }
 }
+
 
 
 

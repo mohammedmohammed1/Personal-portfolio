@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCertificates();
   initProjectManagement();
   initHeaderAvatarManagement();
+  initAdminMode();
   initCopyEmail();
   initSmoothScroll();
 });
@@ -921,8 +922,8 @@ function initCertificates() {
         <div class="cert-actions-row">
           <button class="btn-cert-act view" data-id="${c.id}"><i class="fas fa-eye"></i> View</button>
           <button class="btn-cert-act download" data-id="${c.id}"><i class="fas fa-download"></i> Download</button>
-          <button class="btn-cert-act edit" data-id="${c.id}"><i class="fas fa-edit"></i> Edit</button>
-          <button class="btn-cert-act delete" data-id="${c.id}"><i class="fas fa-trash-alt"></i></button>
+          <button class="btn-cert-act edit admin-only-control" data-id="${c.id}"><i class="fas fa-edit"></i> Edit</button>
+          <button class="btn-cert-act delete admin-only-control" data-id="${c.id}"><i class="fas fa-trash-alt"></i></button>
         </div>
       </div>
     `).join('');
@@ -1549,7 +1550,7 @@ function initProjectManagement() {
             ${p.docUrl ? `<a href="${p.docUrl}" download class="project-btn-github" title="Download Document"><i class="fas fa-file-pdf"></i></a>` : ''}
             <a href="${p.githubUrl || 'https://github.com/mohammedmohammed1'}" target="_blank" class="project-btn-github" title="GitHub Repository"><i class="fab fa-github"></i></a>
           </div>
-          <div class="project-card-mgmt-actions">
+          <div class="project-card-mgmt-actions admin-only-control">
             <button class="btn-cert-act edit btn-proj-edit" data-id="${p.id}"><i class="fas fa-edit"></i> Edit</button>
             <button class="btn-cert-act delete btn-proj-delete" data-id="${p.id}"><i class="fas fa-trash-alt"></i> Delete</button>
           </div>
@@ -1865,6 +1866,78 @@ function initHeaderAvatarManagement() {
     });
   }
 }
+
+/* ==========================================================================
+   18. ADMIN ACCESS CONTROL MODULE (RESTRICT VISITOR MANAGEMENT)
+   ========================================================================== */
+function initAdminMode() {
+  const lockBtn = document.getElementById('admin-lock-btn');
+  const lockIcon = document.getElementById('admin-lock-icon');
+  const modal = document.getElementById('admin-login-modal');
+  const closeModalBtn = document.getElementById('admin-login-modal-close');
+  const cancelModalBtn = document.getElementById('btn-cancel-admin');
+  const loginForm = document.getElementById('admin-login-form');
+  const passInput = document.getElementById('admin-pass-input');
+  const errorMsg = document.getElementById('admin-login-error');
+  const toast = document.getElementById('toast-notification');
+
+  function showToast(msg, isSuccess = true) {
+    if (!toast) return;
+    toast.innerHTML = `<i class="${isSuccess ? 'fas fa-check-circle' : 'fas fa-exclamation-circle'}"></i> ${msg}`;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3500);
+  }
+
+  function checkAdminState() {
+    const isAuth = sessionStorage.getItem('yasin_portfolio_admin') === 'true';
+    if (isAuth) {
+      document.body.classList.add('admin-mode-active');
+      if (lockIcon) lockIcon.className = 'fas fa-unlock-alt';
+      if (lockBtn) lockBtn.title = 'Admin Unlocked (Click to Lock Controls)';
+    } else {
+      document.body.classList.remove('admin-mode-active');
+      if (lockIcon) lockIcon.className = 'fas fa-lock';
+      if (lockBtn) lockBtn.title = 'Admin Access Control (Unlock Uploads/Edits)';
+    }
+  }
+
+  if (lockBtn) {
+    lockBtn.addEventListener('click', () => {
+      const isAuth = sessionStorage.getItem('yasin_portfolio_admin') === 'true';
+      if (isAuth) {
+        sessionStorage.removeItem('yasin_portfolio_admin');
+        checkAdminState();
+        showToast("Admin Mode Locked. Public view active.", false);
+      } else {
+        if (passInput) passInput.value = '';
+        if (errorMsg) errorMsg.style.display = 'none';
+        modal.classList.add('active');
+      }
+    });
+  }
+
+  if (closeModalBtn) closeModalBtn.addEventListener('click', () => modal.classList.remove('active'));
+  if (cancelModalBtn) cancelModalBtn.addEventListener('click', () => modal.classList.remove('active'));
+
+  if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const enteredPass = passInput.value.trim();
+
+      if (enteredPass === 'yasin2026' || enteredPass === 'admin') {
+        sessionStorage.setItem('yasin_portfolio_admin', 'true');
+        checkAdminState();
+        modal.classList.remove('active');
+        showToast("Welcome Admin! Management controls unlocked.");
+      } else {
+        if (errorMsg) errorMsg.style.display = 'block';
+      }
+    });
+  }
+
+  checkAdminState();
+}
+
 
 
 
