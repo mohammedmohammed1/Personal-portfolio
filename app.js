@@ -1526,13 +1526,22 @@ function initProjectManagement() {
       return;
     }
 
-    container.innerHTML = filtered.map(p => `
+    const categoryVideoMap = {
+      fin: 'assets/videos/banking_analytics.webp',
+      ai: 'assets/videos/ai_security.webp',
+      ent: 'assets/videos/enterprise_sales.webp',
+      ops: 'assets/videos/healthcare_ops.webp'
+    };
+
+    container.innerHTML = filtered.map(p => {
+      const vidSrc = categoryVideoMap[p.category] || 'assets/videos/banking_analytics.webp';
+      return `
       <div class="project-card" data-category="${p.category}" data-id="${p.id}">
         <div class="project-img-wrapper">
           <img src="${p.imgUrl || 'assets/healthcare_analytics.jpg'}" alt="${p.title}" class="project-static-img">
-          <canvas class="project-hover-canvas" data-category="${p.category}" data-id="${p.id}"></canvas>
+          <img src="${vidSrc}" alt="Realtime AI Video Preview" class="project-hover-video">
           <div class="project-tag-overlay">${p.categoryName || 'Analytics & Data Science'}</div>
-          <div class="project-hover-badge"><i class="fas fa-play"></i> HOVER TO ANIMATE</div>
+          <div class="project-hover-badge"><i class="fas fa-video"></i> REALTIME VIDEO PREVIEW</div>
         </div>
         <div class="project-body">
           <h3>${p.title}</h3>
@@ -1552,7 +1561,8 @@ function initProjectManagement() {
           </div>
         </div>
       </div>
-    `).join('');
+    `;
+    }).join('');
 
     // Attach Event Listeners for View Insights
     container.querySelectorAll('.btn-proj-view').forEach(btn => {
